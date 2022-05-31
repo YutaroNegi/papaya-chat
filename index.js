@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+
 const io = new Server(server);
 const PORT = process.env.PORT || 5000;
 
@@ -26,6 +28,17 @@ io.on('connection', (socket) => {
         io.emit('msg', data)
     })
 
+    socket.on('switchRoom', function(newRoom){
+        console.log('new room');
+        socket.leave(socket.room);
+        socket.join(newRoom);
+        socket.room = newRoom;
+        io.to(newRoom).emit('updatechat', 'SERVER', 'you have connected to '+ newRoom);
+    })
+
+    socket.on("disconnect", () => {
+        console.log('user disconnected')
+    });
 });
 
 

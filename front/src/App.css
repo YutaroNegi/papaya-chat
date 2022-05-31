@@ -140,3 +140,38 @@ table{
 .usernameChatReceived{
   margin-left: 10px;
 }
+
+.chatBody{
+  overflow: scroll !important;
+  overflow-x: hidden !important; 
+}
+
+@media only screen and (max-width: 767px) {
+  .received{
+    text-align: start;
+    background-color: hsl(222, 14%, 10%);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 80px !important;
+  }
+  
+  .sent{
+    text-align: end;
+    background-color: #2185d0;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-left: auto;
+    width: 80px !important;
+  }
+
+  .sidebar{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 93vh;
+  }
+}

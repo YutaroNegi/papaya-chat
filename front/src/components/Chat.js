@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import io from "socket.io-client";
 
 import { Input } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import { useSelector } from 'react-redux'
+
+import io from "socket.io-client";
 const socket = io('/');
 
 function Chat(){
     const [messageArray, setMessageArray] = useState([])
     const [message, setMessage] = useState('');
     const user = useSelector((state) => state.user)
+    const room = useSelector((state) => state.room)
+    console.log('sala conectada:', room);
 
     function handleMessage(e){
         setMessage(e.target.value);
@@ -30,7 +33,7 @@ function Chat(){
             userID: user.userID
         }
 
-        socket.emit('msg', msgObj);
+        socket.emit('msg', msgObj, room)
         setMessage('')
     }
 
