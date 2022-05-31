@@ -1,6 +1,6 @@
 # README
 
-<p align="center">Event Calendar criado com js, html/css, node.js, mongo </p>
+<p align="center">Sistema de chat criado com node, socket.io e react</p>
 
 <p align="center"> 
     <a href="#sobre">Sobre</a>
@@ -12,7 +12,7 @@
  </p>
 
  # Sobre
- <img src="./papaya-chat-gif" >
+ <img src="./papaya-chat-gif.gif" >
 
  <p>Sistema web de chat com socket.io. utlizando para o front: React e React Semantic UI, e no back é utilizado express com node.js<br> <br> 
  No sistema o usúario pode entrar com seu username e entrar na sala global ou criar uma sala privada<br> <br> 
